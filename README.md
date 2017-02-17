@@ -2,6 +2,7 @@
 
 Used to start new applications which use Searchkit. Based off the popular create-react-app.
 
+## Create React App Readme
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
