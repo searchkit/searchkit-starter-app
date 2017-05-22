@@ -4683,9 +4683,9 @@ sax@^1.2.1, sax@~1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.2.tgz#fd8631a23bc7826bef5d871bdb87378c95647828"
 
-searchkit@2.0.0-10:
-  version "2.0.0-10"
-  resolved "https://registry.yarnpkg.com/searchkit/-/searchkit-2.0.0-10.tgz#d4bcd59cd319c5312473e35335dc7fdf5743ad11"
+searchkit@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/searchkit/-/searchkit-2.0.0.tgz#2269bf7ca9440ba49167639d1c5e723d330e0b8e"
   dependencies:
     "@types/classnames" "0.0.32"
     "@types/enzyme" "^2.7.1"
