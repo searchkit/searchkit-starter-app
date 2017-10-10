@@ -1,1 +1,9 @@
-@import url('https://cdn.jsdelivr.net/searchkit/0.9.0/theme.css');
+@import url('../node_modules/searchkit/release/theme.css');
+
+.my-logo {
+  color:white;
+  flex:0 0 250px;
+  padding:13px 20px;
+  margin-right:15px;
+  line-height: 16px;
+}
