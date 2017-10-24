@@ -7,11 +7,13 @@ import { SearchkitManager,SearchkitProvider,
   ViewSwitcherHits, ViewSwitcherToggle, DynamicRangeFilter,
   InputFilter, GroupedSelectedFilters,
   Layout, TopBar, LayoutBody, LayoutResults,
-  ActionBar, ActionBarRow, SideBar } from 'searchkit'
+  ActionBar, ActionBarRow, SideBar } from 'searchkit';
+import {Link} from 'react-router-dom';
+
 import './index.css'
 
 const host = "http://demo.searchkit.co/api/movies"
-const searchkit = new SearchkitManager(host)
+const searchkit = new SearchkitManager(host);
 
 const MovieHitsGridItem = (props)=> {
   const {bemBlocks, result} = props
@@ -19,10 +21,10 @@ const MovieHitsGridItem = (props)=> {
   const source = extend({}, result._source, result.highlight)
   return (
     <div className={bemBlocks.item().mix(bemBlocks.container("item"))} data-qa="hit">
-      <a href={url} target="_blank">
+      <Link to={{pathname: '/details', state: {url}}}>
         <img data-qa="poster" alt="presentation" className={bemBlocks.item("poster")} src={result._source.poster} width="170" height="240"/>
         <div data-qa="title" className={bemBlocks.item("title")} dangerouslySetInnerHTML={{__html:source.title}}></div>
-      </a>
+      </Link>
     </div>
   )
 }
@@ -37,7 +39,7 @@ const MovieHitsListItem = (props)=> {
         <img alt="presentation" data-qa="poster" src={result._source.poster}/>
       </div>
       <div className={bemBlocks.item("details")}>
-        <a href={url} target="_blank"><h2 className={bemBlocks.item("title")} dangerouslySetInnerHTML={{__html:source.title}}></h2></a>
+        <Link to={{pathname: '/details', state: {url}}}><h2 className={bemBlocks.item("title")} dangerouslySetInnerHTML={{__html:source.title}}></h2></Link>
         <h3 className={bemBlocks.item("subtitle")}>Released in {source.year}, rated {source.imdbRating}/10</h3>
         <div className={bemBlocks.item("text")} dangerouslySetInnerHTML={{__html:source.plot}}></div>
       </div>
@@ -46,6 +48,13 @@ const MovieHitsListItem = (props)=> {
 }
 
 class App extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = Object.assign({}, props);
+  }
+  componentWillReceiveProps(props) {
+    this.setState(props);
+  }
   render() {
     return (
       <SearchkitProvider searchkit={searchkit}>
