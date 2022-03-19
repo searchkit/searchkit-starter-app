@@ -1,19 +1,35 @@
 {
-  "name": "searchkit-starter",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "react-scripts": "^1.0.14"
-  },
+  "name": "searchkit-cra",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
   "dependencies": {
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
-    "searchkit": "beta"
+    "@apollo/client": "3.5.10",
+    "@elastic/datemath": "^5.0.3",
+    "@elastic/eui": "^30.4.1",
+    "@searchkit/client": "3.0.0-canary.51",
+    "@searchkit/elastic-ui": "3.0.0-canary.51",
+    "@searchkit/sdk": "3.0.0-canary.51",
+    "graphql": "15.4.0",
+    "moment": "^2.29.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-scripts": "5.0.0"
+  },
+  "devDependencies": {
+    "@babel/runtime": "7.13.8"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
